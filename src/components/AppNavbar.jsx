@@ -7,7 +7,7 @@ const AppNavbar = () => {
                 <Navbar.Brand href="/" style={{ display: 'flex', alignItems: 'center', fontSize: '24px' }}>
                     <img
                         alt="Brand Logo"
-                        src="/public/logo.png"
+                        src="/logo.png"
                         style={{ width: '60px', height: 'auto', marginRight: '10px' }}
                     />{' '}
                     Car Analytics
