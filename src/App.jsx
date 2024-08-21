@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-      <Router>
+      <Router basename='car-analytics'>
         <AppNavbar />
         <Routes>
           <Route path="/" element={<Dashboard />} />
