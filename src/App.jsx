@@ -10,7 +10,7 @@ import StatisticsPage from './components/StatisticsPage'
 
 function App() {
   return (
-    <Router basename='/car-analytics/'>
+    <Router basename="/">
       <AppNavbar />
       <Routes>
         <Route path="/" element={<Dashboard />} />
