@@ -1,26 +1,61 @@
-import { Container, Row, Col, Card } from 'react-bootstrap';
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Card from "react-bootstrap/Card";
 
 const About = () => {
   return (
-    <Container className="mt-5">
-      <Row>
-        <Col md={{ span: 8, offset: 2 }}>
-          <Card>
+    <Container
+      style={{ marginTop: "100px", marginBottom: "100px", padding: "20px" }}
+    >
+      <Row className="justify-content-center">
+        <Col md={8}>
+          <Card className="shadow-lg">
             <Card.Body>
-              <Card.Title>About Car Analytics</Card.Title>
-              <Card.Text>
-                Welcome to the Car Analytics application! This platform helps users analyze car data, including sales figures and fuel efficiency metrics.
+              <Card.Title
+                className="text-center"
+                style={{
+                  fontSize: "2rem",
+                  fontWeight: "bold",
+                  color: "#28a745",
+                }}
+              >
+                About Car Analytics
+              </Card.Title>
+              <Card.Text
+                className="mt-4"
+                style={{ fontSize: "1.1rem", lineHeight: "1.6", color: "#555" }}
+              >
+                Welcome to the Car Analytics application! This platform provides
+                users with comprehensive tools to analyze car data. Our goal is
+                to offer a user-friendly experience for car enthusiasts.
               </Card.Text>
-              <Card.Text>
-                <strong>Technologies Used:</strong>
-                <ul>
-                  <li>React: For building the user interface.</li>
-                  <li>Vite: A fast build tool and development server.</li>
-                  <li>React Bootstrap: For responsive, mobile-first front-end development.</li>
+              <Card.Text
+                className="mt-4"
+                style={{ fontSize: "1.1rem", lineHeight: "1.6", color: "#555" }}
+              >
+                <strong style={{ color: "#28a745" }}>Technologies Used:</strong>
+                <ul className="mt-3">
+                  <li>
+                    React: For building a dynamic and responsive user interface.
+                  </li>
+                  <li>
+                    Vite: A fast build tool and development server for modern
+                    web projects.
+                  </li>
+                  <li>
+                    React Bootstrap: For creating a responsive, mobile-first
+                    front-end design.
+                  </li>
                 </ul>
               </Card.Text>
-              <Card.Text>
-                This application is a work in progress, and we welcome any feedback or suggestions!
+              <Card.Text
+                className="mt-4"
+                style={{ fontSize: "1.1rem", lineHeight: "1.6", color: "#555" }}
+              >
+                This application is our first project and we greatly value your
+                feedback and suggestions. Thank you for being part of our
+                journey!
               </Card.Text>
             </Card.Body>
           </Card>

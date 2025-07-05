@@ -1,0 +1,59 @@
+/* Dashboard.css */
+
+/* Style for container */
+.container {
+    padding: 0 15px;
+}
+
+/* Heading style */
+h2 {
+    color: #343a40;
+}
+
+/* Button styles */
+button {
+    border-radius: 20px;
+}
+
+/* Active sort button */
+button.active {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Card styles */
+.card {
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+/* Button styles for highlight */
+button[variant="success"] {
+    background-color: #28a745;
+    border: none;
+}
+
+button[variant="danger"] {
+    background-color: #dc3545;
+    border: none;
+}
+
+/* Dashboard.css */
+
+/* Centering the search bar */
+.filter-search-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.filter-search-container .form-control {
+    max-width: 500px; /* Limit the width of the search input */
+}
+
+.filter-search-container .btn {
+    border-radius: 25px;
+}

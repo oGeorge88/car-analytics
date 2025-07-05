@@ -1,8 +1,9 @@
-import { Form, Button, Row, Col } from 'react-bootstrap';
-import  { useState } from "react";
+import { Form, Button, Row, Col } from "react-bootstrap";
+import { useState } from "react";
+import PropTypes from "prop-types";
 
-const FilterSearch = ( {onFilter} ) => {
-  const [query, setQuery] = useState('');
+const FilterSearch = ({ onFilter }) => {
+  const [query, setQuery] = useState("");
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -15,19 +16,23 @@ const FilterSearch = ( {onFilter} ) => {
         <Col>
           <Form.Control
             type="text"
-            placeholder="Search by make, model, or year"
+            placeholder="Search by brand, model, year, price or province"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
         </Col>
         <Col>
-          <Button variant="primary" type="submit">
+          <Button variant="success" type="submit">
             Search
           </Button>
         </Col>
       </Row>
     </Form>
   );
+};
+
+FilterSearch.propTypes = {
+  onFilter: PropTypes.func.isRequired,
 };
 
 export default FilterSearch;
