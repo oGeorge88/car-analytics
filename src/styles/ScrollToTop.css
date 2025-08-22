@@ -1,34 +1,54 @@
+
 .scroll-to-top {
     position: fixed;
-    bottom: 80px;
-    right: 20px;
-    z-index: 1000;
+    bottom: 32px;
+    right: 32px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .scroll-button {
-    background-color: black;
+    background-color: #28a745;
     border: none;
-    padding: 5px;
-    border-radius: 15%;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
     cursor: pointer;
-    color: white;
-    font-size: 15px;
-    transition: opacity 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    -webkit-border-radius: 15%;
-    -moz-border-radius: 15%;
-    -ms-border-radius: 15%;
-    -o-border-radius: 15%;
+    color: #fff;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 12px rgba(40,167,69,0.15);
+    transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .scroll-button:hover {
     background-color: #218838;
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(40,167,69,0.22);
 }
 
 .scroll-button:focus {
-    outline: none;
+    outline: 2px solid #28a745;
+    outline-offset: 2px;
 }
 
 .scroll-button:active {
     background-color: #1e7e34;
+}
+
+@media (max-width: 767px) {
+    .scroll-to-top {
+        bottom: 18px;
+        right: 18px;
+    }
+    .scroll-button {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
 }

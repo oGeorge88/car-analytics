@@ -11,16 +11,20 @@ import StatisticsPage from './components/StatisticsPage'
 function App() {
   return (
     <Router basename="/">
-      <AppNavbar />
-      <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/car/:id" element={<CarDetails />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/highlighted-cars" element={<HighlightedCars />} />
-        <Route path="/statistics" element={<StatisticsPage />} />
-      </Routes>
-      <Footer />
+      <>
+        <AppNavbar />
+        <main style={{ minHeight: '80vh', background: '#f5f7fa' }}>
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/car/:id" element={<CarDetails />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/highlighted-cars" element={<HighlightedCars />} />
+            <Route path="/statistics" element={<StatisticsPage />} />
+          </Routes>
+        </main>
+        <Footer />
+      </>
     </Router>
   );
 }

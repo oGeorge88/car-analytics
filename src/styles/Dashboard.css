@@ -1,0 +1,64 @@
+/* Dashboard Styles - Professional and Modern */
+
+.dashboard-title {
+	color: #28a745;
+	font-weight: 700;
+	letter-spacing: 1px;
+	margin-bottom: 24px;
+}
+
+.dashboard-card {
+	box-shadow: 0 4px 16px rgba(40,167,69,0.08);
+	border-radius: 15px;
+	background: #fff;
+	transition: transform 0.2s, box-shadow 0.2s;
+	border: none;
+}
+.dashboard-card:hover {
+	transform: translateY(-4px) scale(1.02);
+	box-shadow: 0 8px 32px rgba(40,167,69,0.15);
+}
+
+.dashboard-card-title {
+	color: #023047;
+	font-weight: bold;
+	font-size: 1.45rem;
+	margin-bottom: 12px;
+}
+
+.dashboard-card-price {
+	color: #28a745;
+	font-size: 1.15rem;
+	font-weight: bold;
+	margin-bottom: 16px;
+}
+
+.dashboard-highlight-btn {
+	font-weight: 500;
+	font-size: 1.05rem;
+	border-radius: 8px;
+	padding: 10px 18px;
+	transition: background 0.2s, color 0.2s;
+}
+.dashboard-highlight-btn.active {
+	background: #de1a52;
+	color: #fff;
+	border-color: #de1a52;
+}
+
+.dashboard-pagination {
+	margin-top: 32px;
+	justify-content: center;
+}
+
+@media (max-width: 767px) {
+	.dashboard-title {
+		font-size: 1.3rem;
+	}
+	.dashboard-card-title {
+		font-size: 1.1rem;
+	}
+	.dashboard-card {
+		margin-bottom: 18px;
+	}
+}

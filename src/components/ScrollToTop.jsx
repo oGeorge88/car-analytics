@@ -28,12 +28,36 @@ const ScrollToTop = () => {
     }, []);
 
     return (
-        <div className="scroll-to-top">
-            {visible && 
-                <button onClick={scrollToTop} className="scroll-button">
+        <div className="scroll-to-top" aria-live="polite">
+            {visible && (
+                <button
+                    onClick={scrollToTop}
+                    className="scroll-button"
+                    aria-label="Scroll to top"
+                    title="Back to top"
+                    style={{
+                        border: 'none',
+                        background: '#28a745',
+                        color: '#fff',
+                        borderRadius: '50%',
+                        width: '48px',
+                        height: '48px',
+                        boxShadow: '0 4px 12px rgba(40,167,69,0.15)',
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontSize: '1.5rem',
+                        position: 'fixed',
+                        bottom: '32px',
+                        right: '32px',
+                        zIndex: 9999,
+                        transition: 'background 0.2s',
+                    }}
+                >
                     <FaArrowUp />
                 </button>
-            }
+            )}
         </div>
     );
 };

@@ -106,8 +106,15 @@ const Dashboard = () => {
 
     return (
         <>
-            <Container style={{ marginTop: '130px' }}>
-                <h2 className="text-center" style={{ color: '#023047', fontWeight: 'bold' }}>Car Analytics Dashboard</h2>
+            <Container style={{ marginTop: '130px', marginBottom: '60px', maxWidth: '1200px' }}>
+                <Row className="mb-4">
+                    <Col>
+                        <h2 className="text-center" style={{ color: '#28a745', fontWeight: '700', letterSpacing: '1px' }}>Car Analytics Dashboard</h2>
+                        <p className="text-center" style={{ color: '#555', fontSize: '1.15rem' }}>
+                            Explore, filter, and highlight cars with ease. Use the dashboard to discover detailed analytics and make informed decisions.
+                        </p>
+                    </Col>
+                </Row>
                 <div className="d-flex justify-content-center my-4">
                     <FilterSearch onFilter={handleFilter} />
                 </div>
@@ -117,7 +124,7 @@ const Dashboard = () => {
                         variant="link"
                         onClick={() => handleSortChange('name')}
                         className="text-decoration-none"
-                        style={{ color: '#28a745', fontWeight: 'bold' }}
+                        style={{ color: '#28a745', fontWeight: 'bold', fontSize: '1.05rem' }}
                     >
                         Brand {sortCriteria === 'name' && (sortDirection === 'asc' ? <FaArrowUp /> : <FaArrowDown />)}
                     </Button>
@@ -125,7 +132,7 @@ const Dashboard = () => {
                         variant="link"
                         onClick={() => handleSortChange('model')}
                         className="text-decoration-none"
-                        style={{ color: '#28a745', fontWeight: 'bold' }}
+                        style={{ color: '#28a745', fontWeight: 'bold', fontSize: '1.05rem' }}
                     >
                         Model {sortCriteria === 'model' && (sortDirection === 'asc' ? <FaArrowUp /> : <FaArrowDown />)}
                     </Button>
@@ -133,7 +140,7 @@ const Dashboard = () => {
                         variant="link"
                         onClick={() => handleSortChange('year')}
                         className="text-decoration-none"
-                        style={{ color: '#28a745', fontWeight: 'bold' }}
+                        style={{ color: '#28a745', fontWeight: 'bold', fontSize: '1.05rem' }}
                     >
                         Year {sortCriteria === 'year' && (sortDirection === 'asc' ? <FaArrowUp /> : <FaArrowDown />)}
                     </Button>
@@ -141,7 +148,7 @@ const Dashboard = () => {
                         variant="link"
                         onClick={() => handleSortChange('price')}
                         className="text-decoration-none"
-                        style={{ color: '#28a745', fontWeight: 'bold' }}
+                        style={{ color: '#28a745', fontWeight: 'bold', fontSize: '1.05rem' }}
                     >
                         Price {sortCriteria === 'price' && (sortDirection === 'asc' ? <FaArrowUp /> : <FaArrowDown />)}
                     </Button>
@@ -164,7 +171,7 @@ const Dashboard = () => {
                                     <Link to={`/car/${car.Cid}`}>
                                         <Card.Img
                                             variant="top"
-                                            src={car.Img300} // Adjust based on your image field
+                                            src={car.Img300}
                                             alt={car.NameMMT}
                                             style={{
                                                 maxHeight: '200px',
@@ -177,16 +184,16 @@ const Dashboard = () => {
 
                                     <Card.Body
                                         className="d-flex flex-column"
-                                        style={{ backgroundColor: 'rgba(255, 255, 255, 0.9)', padding: '20px' }}
+                                        style={{ backgroundColor: 'rgba(255, 255, 255, 0.95)', padding: '22px' }}
                                     >
                                         <Card.Title
                                             className="text-center"
                                             style={{
                                                 color: '#023047',
                                                 fontWeight: 'bold',
-                                                fontSize: '1.5rem',
-                                                textShadow: '1px 1px 2px rgba(0, 0, 0, 0.1)',
-                                                marginBottom: '15px',
+                                                fontSize: '1.45rem',
+                                                textShadow: '1px 1px 2px rgba(0, 0, 0, 0.08)',
+                                                marginBottom: '12px',
                                             }}
                                         >
                                             <Link
@@ -203,8 +210,8 @@ const Dashboard = () => {
                                             className="text-center"
                                             style={{
                                                 color: '#666',
-                                                fontSize: '20px',
-                                                minHeight: '60px',
+                                                fontSize: '1.1rem',
+                                                minHeight: '48px',
                                             }}
                                         >
                                             {car.Model} - {car.Yr}
@@ -213,9 +220,9 @@ const Dashboard = () => {
                                             className="text-center"
                                             style={{
                                                 color: '#28a745',
-                                                fontSize: '1.3rem',
+                                                fontSize: '1.15rem',
                                                 fontWeight: 'bold',
-                                                marginBottom: '20px',
+                                                marginBottom: '16px',
                                             }}
                                         >
                                             {car.Prc} THB
@@ -229,6 +236,8 @@ const Dashboard = () => {
                                                     backgroundColor: car.highlighted ? '#de1a52' : 'transparent',
                                                     borderColor: car.highlighted ? '#de1a52' : '#28a745',
                                                     color: car.highlighted ? '#ffffff' : '#28a745',
+                                                    fontWeight: '500',
+                                                    fontSize: '1.05rem',
                                                     transition: 'background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease'
                                                 }}
                                             >
@@ -240,7 +249,7 @@ const Dashboard = () => {
                             </Col>
                         ))
                     ) : (
-                        <p>No data found</p>
+                        <p className="text-center" style={{ color: '#888', fontSize: '1.1rem' }}>No data found</p>
                     )}
                 </Row>
 
@@ -260,7 +269,7 @@ const Dashboard = () => {
 
                 {isMobile && visibleItems < filteredData.length && (
                     <div className="d-flex justify-content-center" style={{marginTop: '30px'}}>
-                        <Button onClick={handleLoadMore} variant='success'>Load More</Button>
+                        <Button onClick={handleLoadMore} variant='success' style={{ fontWeight: '500', fontSize: '1.05rem' }}>Load More</Button>
                     </div>
                 )}
             </Container>

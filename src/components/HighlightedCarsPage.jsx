@@ -24,34 +24,38 @@ const HighlightedCarPage = () => {
     };
 
     return (
-        <Container style={{ marginTop: '130px' }}>
-            <h2>Highlighted Cars</h2>
-            <Row className="mt-3 gy-4">
+        <Container style={{ marginTop: '130px', marginBottom: '60px', maxWidth: '1200px' }}>
+            <Row className="mb-4">
+                <Col>
+                    <h2 className="text-center" style={{ color: '#28a745', fontWeight: '700', letterSpacing: '1px' }}>Highlighted Cars</h2>
+                    <p className="text-center" style={{ color: '#555', fontSize: '1.15rem' }}>
+                        Your favorite cars, highlighted for quick access and comparison. Remove highlights anytime to update your selection.
+                    </p>
+                </Col>
+            </Row>
+            <Row className="gy-4">
                 {highlightedCars.length > 0 ? (
                     highlightedCars.map((car) => (
-                        <Col sm={12} md={6} lg={4} key={car.Cid}>
-                            <Card>
-                                <Card.Body>
-                                    <Card.Title>
-                                        <Link to={`/car/${car.Cid}`}>
-                                            {car.NameMMT}
-                                        </Link>
+                        <Col sm={12} md={6} lg={4} key={car.Cid} className="d-flex align-items-stretch">
+                            <Card className="w-100 shadow-lg border-0 rounded-3" style={{ background: '#f9fafb', borderColor: '#de1a52' }}>
+                                <Link to={`/car/${car.Cid}`}>
+                                    {car.Img300 && <Card.Img src={car.Img300} alt={car.Model} style={{ height: '200px', objectFit: 'cover', borderTopLeftRadius: '16px', borderTopRightRadius: '16px' }} />}
+                                </Link>
+                                <Card.Body className="d-flex flex-column">
+                                    <Card.Title className="text-center" style={{ color: '#de1a52', fontWeight: '700', fontSize: '1.25rem' }}>
+                                        <Link to={`/car/${car.Cid}`} className="text-decoration-none" style={{ color: '#de1a52' }}>{car.NameMMT}</Link>
                                     </Card.Title>
-                                    <Card.Text>
-                                        Model: {car.Model} <br />
-                                        Year: {car.Yr} <br />
-                                        Price: {car.Prc} {car.Currency} <br />
-                                        Province: {car.Province} <br />
+                                    <Card.Text className="text-center" style={{ color: '#444', fontSize: '1.08rem', minHeight: '48px' }}>
+                                        <span style={{ color: '#28a745', fontWeight: '500' }}>{car.Model}</span> &bull; {car.Yr}<br />
+                                        <span style={{ color: '#28a745', fontWeight: '500' }}>{car.Prc} {car.Currency}</span><br />
+                                        <span style={{ color: '#888' }}>{car.Province}</span>
                                     </Card.Text>
-                                    <div>
-                                        <Link to={`/car/${car.Cid}`}>
-                                            {car.Img300 && <img src={car.Img300} alt={car.Model} style={{ width: '100%' }} />}
-                                        </Link>
-                                    </div>
                                     <Button
                                         variant="danger"
                                         onClick={() => removeHighlight(car.Cid)}
-                                        className="mt-3 d-flex align-items-center"
+                                        className="mt-auto px-3 py-2 rounded-3 d-flex align-items-center justify-content-center"
+                                        style={{ fontWeight: '500', fontSize: '1.05rem' }}
+                                        aria-label={`Remove highlight from ${car.NameMMT}`}
                                     >
                                         Remove Highlight <FaStar className="ms-2" />
                                     </Button>
@@ -61,7 +65,7 @@ const HighlightedCarPage = () => {
                     ))
                 ) : (
                     <Col>
-                        <p>No highlighted cars found.</p>
+                        <p className="text-center" style={{ color: '#888', fontSize: '1.1rem' }}>No highlighted cars found.</p>
                     </Col>
                 )}
             </Row>

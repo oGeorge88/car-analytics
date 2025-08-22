@@ -7,6 +7,42 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependency directories
+node_modules/
+
+# Build output
+dist/
+build/
+dist-ssr/
+
+# Coverage reports
+coverage/
+
+# Environment files
+.env
+.env.*
+
+# Cache and temp
+.cache/
+.parcel-cache/
+tmp/
+temp/
+
+# OS and IDE
+.DS_Store
+Thumbs.db
+.vscode/
+!.vscode/extensions.json
+.idea/
+
+# Misc
+*.local
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
 node_modules
 dist
 dist-ssr
